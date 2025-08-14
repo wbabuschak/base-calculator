@@ -54,9 +54,6 @@
             outputlabel.innerHTML = "";
             const outputSpan = document.createElement("span");
             outputSpan.textContent = parseInt(input.value, inputbase.value).toString(outputbase.value);
-            if (document.getElementById("capsCheck").checked){
-                outputSpan.textContent.toUpperCase();
-            }
             outputSpan.id = "output-value";
             const textSpan = document.createElement("span");
             textSpan.textContent = " in base ";
@@ -64,12 +61,10 @@
             const outputBaseSpan = document.createElement("span");
             outputBaseSpan.textContent = outputbase.value;
             outputBaseSpan.id = "outputBase-value";
-            if (document.getElementById("capsCheck").checked){
-                outputBaseSpan.textContent.toUpperCase();
-            }
             outputlabel.appendChild(outputSpan);
             outputlabel.appendChild(textSpan);
             outputlabel.appendChild(outputBaseSpan);
+            updateCaps();
         }
 
         function updateCaps(){
